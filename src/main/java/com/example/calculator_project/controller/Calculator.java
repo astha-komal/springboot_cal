@@ -2,10 +2,8 @@ package com.example.calculator_project.controller;
 
 import com.example.calculator_project.model.CalRepo;
 import com.example.calculator_project.model.Request;
-import com.example.calculator_project.service.AddService;
-import com.example.calculator_project.service.DivideService;
-import com.example.calculator_project.service.MulService;
-import com.example.calculator_project.service.SubService;
+import com.example.calculator_project.model.Request_2;
+import com.example.calculator_project.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +18,8 @@ public class Calculator {
     private final SubService subService;
 
     private final MulService mulService;
+
+    private final UserService userService;
 
 
     @PostMapping("/add")
@@ -37,5 +37,10 @@ public class Calculator {
     @PostMapping("/div")
     public double cal_final4(@RequestBody Request request){
         return divideService.div(request.num1,request.num2);
+    }
+
+    @PostMapping("/signup")
+    public String sign_up(@RequestBody Request_2 request_2){
+         return userService.userSave(request_2.email,request_2.password,request_2.conform_password);
     }
 }

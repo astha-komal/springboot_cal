@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AddService {
+public class   AddService {
 
     private final CalRepo calRepo;
 
@@ -23,6 +23,5 @@ public class AddService {
         return ans;
 
     }
-
 
 }
