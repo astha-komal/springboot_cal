@@ -14,7 +14,7 @@ public class UserService {
     private final UserRepo userRepo;
 
     public boolean checkEmail(String email){
-        String emailReg="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n";
+        String emailReg="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         return Pattern.matches(emailReg,email);
     }
     public boolean check(String email){
@@ -23,12 +23,12 @@ public class UserService {
     }
 
     public boolean checkPassword(String password){
-        String passReg="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$\n";
+        String passReg="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
         return Pattern.matches(passReg,password);
     }
     
     public boolean checkConformPassword(String password,String conform_password){
-        if(password==conform_password){
+        if(password.equals(conform_password)){
             return true;
         }
         return false;
@@ -39,7 +39,7 @@ public class UserService {
             ut.e=email;
             ut.p=password;
             userRepo.save(ut);
-            return "Sign Up Sucessfully";
+            return "Sign Up Successfully";
         }
         return "User other Credential";
     }

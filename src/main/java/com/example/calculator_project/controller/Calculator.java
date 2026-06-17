@@ -21,6 +21,10 @@ public class Calculator {
 
     private final UserService userService;
 
+    @RequestMapping("/signup")
+   public String sign_up(@RequestBody Request_2 request_2){
+        return userService.userSave(request_2.email,request_2.password,request_2.conform_password);
+    }
 
     @PostMapping("/add")
     public double cal_final(@RequestBody Request request){
@@ -39,8 +43,8 @@ public class Calculator {
         return divideService.div(request.num1,request.num2);
     }
 
-    @PostMapping("/signup")
-    public String sign_up(@RequestBody Request_2 request_2){
-         return userService.userSave(request_2.email,request_2.password,request_2.conform_password);
-    }
+    //@PostMapping("/signup")
+ //   public String sign_up(@RequestBody Request_2 request_2){
+    //     return userService.userSave(request_2.email,request_2.password,request_2.conform_password);
+  //  }
 }
