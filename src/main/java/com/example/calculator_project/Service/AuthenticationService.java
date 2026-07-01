@@ -1,10 +1,10 @@
-package com.example.calculator_project.service;
+package com.example.calculator_project.Service;
 
 import com.example.calculator_project.Exception.UserAlreadyExistsException;
 import com.example.calculator_project.Repository.UserRepo;
-import com.example.calculator_project.model.Request_Signup;
-import com.example.calculator_project.model.Request_signin;
-import com.example.calculator_project.model.User;
+import com.example.calculator_project.Model.RequestSignin;
+import com.example.calculator_project.Model.RequestSignup;
+import com.example.calculator_project.Model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,7 +18,7 @@ public class AuthenticationService {
   private final PasswordEncoder passwordEncoder;
   private final AuthenticationManager authenticationManager;
 
-  public User signup(Request_Signup request) {
+  public User signup(RequestSignup request) {
 
     if (userRepo.existsByEmail(request.getEmail())) {
       throw new UserAlreadyExistsException("Email is already exists");
@@ -32,7 +32,7 @@ public class AuthenticationService {
     return userRepo.save(user);
   }
 
-  public User authenticate(Request_signin request) {
+  public User signin(RequestSignin request) {
     authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
     return userRepo.findByEmail(request.getEmail()).orElseThrow();

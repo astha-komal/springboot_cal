@@ -1,4 +1,4 @@
-package com.example.calculator_project.responses;
+package com.example.calculator_project.Responses;
 
 import lombok.Getter;
 import lombok.Setter;

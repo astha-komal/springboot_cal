@@ -1,6 +1,6 @@
-package com.example.calculator_project.configs;
+package com.example.calculator_project.Configs;
 
-import com.example.calculator_project.service.JwtService;
+import com.example.calculator_project.Service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

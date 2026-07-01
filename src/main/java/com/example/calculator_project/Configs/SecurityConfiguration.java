@@ -1,4 +1,4 @@
-package com.example.calculator_project.configs;
+package com.example.calculator_project.Configs;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +30,6 @@ public class SecurityConfiguration {
             auth ->
                 auth.requestMatchers("/auth/**")
                     .permitAll()
-                    .requestMatchers("/cal/**")
-                    .hasRole("astha")
-                    .requestMatchers("/cal/**")
-                    .hasRole("Sid")
                     .anyRequest()
                     .authenticated())
         .sessionManagement(

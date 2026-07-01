@@ -1,4 +1,4 @@
-package com.example.calculator_project.model;
+package com.example.calculator_project.Model;
 
 import jakarta.persistence.*;
 import java.util.Collection;
@@ -21,10 +21,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User implements UserDetails {
   @Id
   @Column(unique = true, length = 100, nullable = false, name = "email")
-  public String email;
+  private String email;
 
   @Column(nullable = false, name = "password")
-  public String password;
+  private String password;
 
   @CreationTimestamp
   @Column(updatable = false, name = "created_at")

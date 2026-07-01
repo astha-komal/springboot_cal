@@ -1,4 +1,4 @@
-package com.example.calculator_project.service;
+package com.example.calculator_project.Service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,4 +1,4 @@
-package com.example.calculator_project.model;
+package com.example.calculator_project.Model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,17 +8,17 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Request_Signup {
+public class RequestSignup {
   @NotBlank(message = "email is required")
   @Email(message = "Invalid email format")
-  public String email;
+  private String email;
 
   @NotBlank(message = "password is required")
   @Pattern(
-      regexp = "^(?=.*[A-Za-z])(?=.*\\d).{8,}$",
+      regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
       message = "Password must contain at least 8 characters, one letter and one number")
-  public String password;
+  private String password;
 
   @NotBlank(message = "conform password is required")
-  public String conform_password;
+  private String conform_password;
 }

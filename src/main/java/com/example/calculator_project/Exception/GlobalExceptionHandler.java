@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
   @ExceptionHandler(UserAlreadyExistsException.class)
-  public ResponseEntity<String> handleUserAlreadyExists(UserAlreadyExistsException ex) {
-    return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+  public ResponseEntity<String> handleUserAlreadyExists(UserAlreadyExistsException exception) {
+    return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
   }
 
   @ExceptionHandler(MethodArgumentNotValidException.class)
   public ResponseEntity<Map<String, String>> handleValidationExceptions(
-      MethodArgumentNotValidException ex) {
+      MethodArgumentNotValidException exception) {
 
     Map<String, String> errors = new HashMap<>();
 
-    ex.getBindingResult()
+    exception.getBindingResult()
         .getFieldErrors()
         .forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
 
@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
   }
 
   @ExceptionHandler(IllegalArgumentException.class)
-  public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException ex) {
-    return ResponseEntity.badRequest().body(ex.getMessage());
+  public ResponseEntity<String> handleIllegalArgument(IllegalArgumentException exception) {
+    return ResponseEntity.badRequest().body(exception.getMessage());
   }
 }

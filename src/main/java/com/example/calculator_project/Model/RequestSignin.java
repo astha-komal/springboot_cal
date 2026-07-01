@@ -1,4 +1,4 @@
-package com.example.calculator_project.model;
+package com.example.calculator_project.Model;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class Request_signin {
+public class RequestSignin {
   @NotBlank(message = "email is required")
   private String email;
 

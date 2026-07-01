@@ -1,4 +1,4 @@
-package com.example.calculator_project.configs;
+package com.example.calculator_project.Configs;
 
 import com.example.calculator_project.Repository.UserRepo;
 import lombok.RequiredArgsConstructor;
@@ -19,9 +19,9 @@ public class ApplicationConfiguration {
 
   @Bean
   UserDetailsService userDetailsService() {
-    return username ->
+    return email ->
         userRepo
-            .findByEmail(username)
+            .findByEmail(email)
             .orElseThrow(() -> new UsernameNotFoundException("User not found"));
   }
 

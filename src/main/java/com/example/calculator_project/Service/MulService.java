@@ -1,7 +1,7 @@
-package com.example.calculator_project.service;
+package com.example.calculator_project.Service;
 
-import com.example.calculator_project.model.CalRepo;
-import com.example.calculator_project.model.Display_table;
+import com.example.calculator_project.Model.CalRepo;
+import com.example.calculator_project.Model.Display_table;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

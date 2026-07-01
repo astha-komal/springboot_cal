@@ -1,6 +1,6 @@
 package com.example.calculator_project.Repository;
 
-import com.example.calculator_project.model.User;
+import com.example.calculator_project.Model.User;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
